@@ -6,8 +6,6 @@ stages:
     jobs:
     - job: install
       steps:
-      - script: echo Install the requirements.txt dependencies!
-        displayName: 'Install the requirements.txt dependencies'
       - script: |
          python -m pip install -r requirements.txt
          displayName: 'Install the requirements.txt dependencies'
