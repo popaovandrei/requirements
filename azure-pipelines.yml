@@ -1,18 +1,17 @@
-trigger:
-- main
-
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo Install the requirements.txt dependencies!
-  displayName: 'Install the requirements.txt dependencies'
-
-- script: |
-    python -m pip install -r requirements.txt
-  displayName: 'Install the requirements.txt dependencies'
-
 stages:
+  - stage: 'Req install'
+    jobs:
+    - job: install
+      steps:
+      - script: echo Install the requirements.txt dependencies!
+        displayName: 'Install the requirements.txt dependencies'
+      - script: |
+         python -m pip install -r requirements.txt
+         displayName: 'Install the requirements.txt dependencies'
+
   - stage: 'BlackDuck_Code_Scan'
     jobs:
     - job: detect
