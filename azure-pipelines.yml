@@ -8,7 +8,6 @@ stages:
       steps:
       - script: |
          python -m pip install -r requirements.txt
-         displayName: 'Install the requirements.txt dependencies'
 
   - stage: 'BlackDuck_Code_Scan'
     jobs:
