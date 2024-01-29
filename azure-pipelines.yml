@@ -2,7 +2,7 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
-  - stage: 'Req install'
+  - stage: 'Install'
     jobs:
     - job: install
       steps:
