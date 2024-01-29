@@ -7,7 +7,10 @@ stages:
     - job: install
       steps:
       - script: |
-         python -m pip install -r requirements.txt
+         python3 -m pip install --user virtualenv
+         python3 -m venv /tmp/requirements
+         source /tmp/requirements/bin/activate
+         pip install -r requirements.txt
 
   - stage: 'BlackDuck_Code_Scan'
     jobs:
