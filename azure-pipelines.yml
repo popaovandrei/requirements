@@ -11,3 +11,20 @@ steps:
 - script: |
     python -m pip install -r requirements.txt
   displayName: 'Install the requirements.txt dependencies'
+
+stages:
+  - stage: 'BlackDuck_Code_Scan'
+    jobs:
+    - job: detect
+      steps:
+      - task: SynopsysDetectTask@9
+        inputs:
+          BlackDuckService: 'BlackDuck'
+          DetectArguments: |
+            --detect.project.name=requirements  
+            --detect.project.version.name=azure1 
+            --blackduck.trust.cert=true  
+            --detect.detector.search.depth=100  
+            --detect.tools=DETECTOR  
+            --detect.detector.search.continue=true
+          DetectVersion: 'latest'  
