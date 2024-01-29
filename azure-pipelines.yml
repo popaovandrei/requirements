@@ -16,5 +16,5 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-    python -m pip install -r reqs.txt
+    python -m pip install -r requirements.txt
   displayName: 'Run a multi-line script'
